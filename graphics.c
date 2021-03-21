@@ -66,6 +66,9 @@ static void set_render_color(graphics *graphics, color color)
     case DARK:
         SDL_SetRenderDrawColor(graphics->renderer, 0x4C, 0x56, 0x6A, 0xFF);
         break;
+    case WHITEISH:
+        SDL_SetRenderDrawColor(graphics->renderer, 0xEC, 0xEF, 0xF4, 0xFF);
+        break;
     }
 }
 

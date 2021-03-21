@@ -13,7 +13,8 @@ typedef enum color
     PINK,
     BLUE,
     RED,
-    DARK
+    DARK,
+    WHITEISH
 } color;
 
 /**
