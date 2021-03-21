@@ -32,7 +32,19 @@ static struct maze_cell *make_maze_cell(int x, int y)
     struct maze_cell *cell = malloc(sizeof(struct maze_cell));
     cell->x_pos = x;
     cell->y_pos = y;
+    cell->next = 0;
     return cell;
+}
+
+static void free_stack()
+{
+    if (maze_stack)
+    {
+        for (; maze_stack; maze_stack = maze_stack->next)
+        {
+            free(maze_stack);
+        }
+    }
 }
 
 /**
@@ -101,8 +113,14 @@ static void calc_maze()
         else
         {
             // No valid moves -- backtrack by popping off the stack
+            struct maze_cell *top = maze_stack;
             maze_stack = maze_stack->next;
+            free(top);
         }
+    }
+    else
+    {
+        free_stack();
     }
 }
 
