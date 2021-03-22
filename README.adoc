@@ -1,0 +1,19 @@
+= Amazing Mazes!
+
+Generates a random maze using a backtracking algorithm.
+
+image::https://i.postimg.cc/yYxchpwj/amazing-screenshot.png[]
+
+Builds and runs on MacOS, but with a bit of effort should run elsewhere too.
+
+== Build it...
+Install the Xcode command line tools
+[source,bash]
+xcode-select --install
+
+Install SDL2 via Homebrew and run make
+[source,bash]
+----
+$ brew install sdl2 sdl2_image sdl2_ttf
+$ make
+----
